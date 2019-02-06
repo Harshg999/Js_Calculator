@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Scientific Calculator</title>
+        
+        
+    <script>
+    function Ele_input(m)
+        {
+            var s=document.getElementById('d').value;
+            s=s.concat(m);
+            document.getElementById('d').value=s;
+
+        }
+    function ac()
+        {
+            var c="";
+            document.getElementById("d").value=c;
+        }
+    function equal()
+        {
+            var a=document.getElementById("d").value;
+            var ans=eval(a);
+            document.getElementById("d").value=ans;
+        }
+    function back()
+        {
+            var s=document.getElementById("d").value;
+            s=s.slice(0,-1);
+            document.getElementById("d").value=s;
+        }
+    function sqrt()
+        {
+            var s=parseFloat(document.getElementById("d").value);
+            var temp=Math.sqrt(s);
+            document.getElementById("d").value=""+temp;
+        }
+    function log()
+        {
+            var s=parseFloat(document.getElementById("d").value);
+            var temp=Math.log(s);
+            document.getElementById("d").value=""+temp;
+        }
+    function sin()
+        {
+            var s=parseFloat(document.getElementById("d").value);
+            var temp=Math.sin(s);
+            document.getElementById("d").value=""+temp;
+        }
+    function cos()
+        {
+            var s=parseFloat(document.getElementById("d").value);
+            var temp=Math.cos(s);
+            document.getElementById("d").value=""+temp;
+        }
+    </script>
+        
+        
+    <style type="text/css">
+    .btn{
+        height:50px;
+        width:60px;
+    }
+    </style>
+
+    </head>
+    <body>
+    <center><h1> Scientific Calculator</h1></center><br><br>
+
+
+    <center><table rules="none" border="10px" >
+    <tr><td colspan=5><textarea readonly style="width:98%; resize:none; text-align:right; " id="d" placeholder="0"></textarea></td></tr>
+    <tr>
+    <td><button class="btn" onClick="sqrt()">sqrt</button></td>
+    <td><button class="btn" onClick="log()">log</button></td>
+    <td><button class="btn" onClick="cos()">cos</button></td>
+    <td><button class="btn" onClick="sin()">sin</button></td>
+    <td><button class="btn" onClick="back()">&larr;</button></td>
+    </tr>
+    
+    <tr>
+    <td><button class="btn" onClick="Ele_input('7')">7</button></td>
+    <td><button class="btn" onClick="Ele_input('8')">8</button></td>
+    <td><button class="btn" onClick="Ele_input('9')">9</button></td>
+    <td><button class="btn" onClick="Ele_input('/')">/</button></td>
+    <td><button class="btn" onClick="ac()">AC</button></td>
+    </tr>
+
+    <tr>
+    <td><button class="btn" onClick="Ele_input('4')">4</button></td>
+    <td><button class="btn" onClick="Ele_input('5')">5</button></td>
+    <td><button class="btn" onClick="Ele_input('6')">6</button></td>
+    <td><button class="btn" onClick="Ele_input('*')">x</button></td>
+    <td rowspan="3"><button style="height:160px; width:100%;" onClick="equal()">=</button></td>
+    </tr>
+
+    <tr>
+    <td><button class="btn" onClick="Ele_input('1')">1</button></td>
+    <td><button class="btn" onClick="Ele_input('2')">2</button></td>
+    <td><button class="btn" onClick="Ele_input('3')">3</button></td>
+    <td><button class="btn" onClick="Ele_input('-')">-</button></td>
+    </tr>
+
+    <tr>
+    <td><button class="btn" onClick="Ele_input('0')">0</button></td>
+    <td><button class="btn" onClick="Ele_input('.')">.</button></td>
+    <td><button class="btn" onClick="Ele_input('%')">%</button></td>
+    <td><button class="btn" onClick="Ele_input('+')">+</button></td>
+    </tr>
+        </table></center>
+    </body>
+</html>
